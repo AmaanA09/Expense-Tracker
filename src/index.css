@@ -1052,14 +1052,14 @@ tr:last-child {
   }
 
 }
-@media only screen  and (max-width: 1440px) and (min-width: 1370px){
+/* @media only screen  and (max-width: 1440px) and (min-width: 1370px){
   #expense-table > table > tbody > tr > td {
     text-align: center;
     padding: 10px 5px;
     font-size: 28px;
   }
   #expense-table > table > thead > tr > th {
-    /* padding: 15px 5px 15px 5px; */
+    padding: 15px 5px 15px 5px;
     font-size: 28px;
   }
   .delete-modal > p {
@@ -1069,8 +1069,8 @@ tr:last-child {
     font-size: 28px;
   }
   .action-button {
-    /* padding: 2px 5px;
-    border-radius: 8px; */
+    padding: 2px 5px;
+    border-radius: 8px;
     font-size: 24px;
   }
   .action-button > img{
@@ -1080,10 +1080,10 @@ tr:last-child {
     gap: 10px;
   }
   .category-btn-container > div{
-    /* margin: 0px 0px 30px 0px; */
+    margin: 0px 0px 30px 0px;
     gap: 10px;
   }
   .category-btn{
     font-size: 20px;
   }
-}
+} */
