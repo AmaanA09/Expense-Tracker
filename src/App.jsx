@@ -27,7 +27,7 @@ function App() {
   const [dataIndex, setDataIndex] = useState(0);
   const [editModal, setEditModal] = useState(false);
   
-  // console.log(dataIndex);
+  console.log("app",dataIndex);
 
   const handleAddBudget = (newBudget) => {
     setBudget(newBudget);
@@ -108,6 +108,7 @@ function App() {
           data={displayData}
           changeExpenseData={handleExpenseData}
           setExpenseModal={setExpenseModal}
+          dataIndex={dataIndex}
         />
       )}
       {budgetModal && (
