@@ -28,7 +28,7 @@ function ExpenseTable({data,setDeleteModal,handleDataIndex,setEditModal}){
                                 {/* <td>{item.Category}</td> */}
                                 <td>{item.Amount}</td>
                                 <td>
-                                    <button className="action-button" onClick={()=>(setEditModal(true),handleDataIndex(index+1))}><img src={editLogo}/>Edit</button> 
+                                    <button className="action-button" onClick={()=>(setEditModal(true),handleDataIndex(item.SrNo))}><img src={editLogo}/>Edit</button> 
                                     <button className="action-button" onClick={()=>(setDeleteModal(true) , handleDataIndex(index+1))}><img src={deleteLogo}/>Delete</button></td>
                             </tr>
                         )

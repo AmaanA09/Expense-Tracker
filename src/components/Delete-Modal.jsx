@@ -5,8 +5,8 @@ function DeleteModal({setDeleteModal,setData,dataIndex,data}) {
 
     const handleDeleteData =(value)=>{
         // value.preventDefault()
-      let removeData = data.filter((item)=>{
-        return item.SrNo !== value
+      let removeData = data.filter((item,index)=>{
+        return index+1 !== value
         // console.log("data index",item.SrNo
       })
       setData(removeData)

@@ -29,14 +29,15 @@ function ExpenseModal({ data, changeExpenseData, setExpenseModal }) {
     return Object.keys(error).length === 0
   }
 
-  const dataIndex = data.map((item) => {
-    return  item.SrNo;
+  const dataIndex = data.map((item,index) => {
+    return  index+1;
   });
   console.log("expense",dataIndex)
 
   useEffect(()=>{
     setSrno(dataIndex.length+1)
   },[data])
+  console.log("expensemodal srno",srno)
   const handleExpenseName = (e) => {
     setExpenseName(e.target.value);
   };
