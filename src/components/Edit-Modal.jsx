@@ -55,7 +55,7 @@ function EditModal({ setEditModal, dataIndex, displayData, handleEditTrnsaction,
   
 
   return (
-    <div className="modal-container">
+    <div className="modal-container" onClick={() => setEditModal(false)}>
       <div className="modal-inner-div">
         <button
           type="button"
@@ -66,7 +66,7 @@ function EditModal({ setEditModal, dataIndex, displayData, handleEditTrnsaction,
         </button>
         <form onSubmit={handleSubmit}>
           <h2 className="popup-head">Add Expense Detail</h2>
-          <div>
+          {/* <div>
             <label htmlFor="sr-no">Sr.No </label>
           </div>
           <div className="input-div">
@@ -78,7 +78,7 @@ function EditModal({ setEditModal, dataIndex, displayData, handleEditTrnsaction,
               value={SrNo}
               readOnly
             />
-          </div>
+          </div> */}
           <div>
             <label htmlFor="exp-name">Expense Name </label>
           </div>

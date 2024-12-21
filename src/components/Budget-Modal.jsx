@@ -29,7 +29,7 @@ function BudgetModal({budgetChange,setBudgetModal}){
 
     return(
         <>
-        <div className="modal-container">
+        <div className="modal-container" onClick={() => setBudgetModal(false)}>
             <div className="modal-inner-div">
             <button className="budget-exit-button" onClick={()=>(setBudgetModal(false))}>x</button>
                 <form>

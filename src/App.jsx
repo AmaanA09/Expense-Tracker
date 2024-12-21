@@ -36,7 +36,7 @@ function App() {
     setData(newData);
   };
 
-  console.log(data)
+  // console.log(data)
 
   // useEffect(() => {
   //   setDisplayData(data);

@@ -17,17 +17,18 @@ function DeleteModal({setDeleteModal,setData,dataIndex,data,setActiveCategory}) 
       // notify()
       setData((data)=>data.filter((expense) => expense.SrNo !==dataIndex))
       setActiveCategory("")
+      setDeleteModal(false)
       notify()
     }
   return (
-    <div className="modal-container">
+    <div className="modal-container" onClick={()=>(setDeleteModal(false))}>
       <div className="delete-modal">
        <img src={exclamation}/>
        <p>Are You Sure ?</p>
        <span>Do you really want delete this transaction</span>
         <div>
           <button type="button" className="cancel-btn" onClick={()=>(setDeleteModal(false))}>Cancel</button>
-          <button type="button" className="delete-btn" onClick={()=>(handleDeleteData(),setDeleteModal(false))}>Delete</button>
+          <button type="button" className="delete-btn" onClick={()=>(handleDeleteData())}>Delete</button>
         </div>
       </div>
      </div>
