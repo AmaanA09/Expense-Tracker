@@ -1,16 +1,22 @@
 import exclamation from "../assets/exclamation.png"
 import {toast } from 'react-toastify';
-function DeleteModal({setDeleteModal,setData,dataIndex,data}) {
+function DeleteModal({setDeleteModal,setData,dataIndex,data,setActiveCategory}) {
   const notify = () => toast("Delete Successfully!");
 
-    const handleDeleteData =(value)=>{
+    const handleDeleteData =()=>{
         // value.preventDefault()
-      let removeData = data.filter((item,index)=>{
-        return index+1 !== value
-        // console.log("data index",item.SrNo
-      })
-      setData(removeData)
-      console.log(value)
+      // let removeData = data.filter((item,index)=>{
+      //   return index+1 !== value
+      //   // console.log("data index",item.SrNo
+      // })
+
+      // let removeData = data.splice(value , 1)
+      // setData([...data], removeData)
+      // setData(removeData)
+      // console.log(value)
+      // notify()
+      setData((data)=>data.filter((expense) => expense.SrNo !==dataIndex))
+      setActiveCategory("")
       notify()
     }
   return (
@@ -21,7 +27,7 @@ function DeleteModal({setDeleteModal,setData,dataIndex,data}) {
        <span>Do you really want delete this transaction</span>
         <div>
           <button type="button" className="cancel-btn" onClick={()=>(setDeleteModal(false))}>Cancel</button>
-          <button type="button" className="delete-btn" onClick={()=>(handleDeleteData(dataIndex),setDeleteModal(false))}>Delete</button>
+          <button type="button" className="delete-btn" onClick={()=>(handleDeleteData(),setDeleteModal(false))}>Delete</button>
         </div>
       </div>
      </div>

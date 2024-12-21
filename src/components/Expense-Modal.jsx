@@ -62,7 +62,7 @@ function ExpenseModal({ data, changeExpenseData, setExpenseModal }) {
     changeExpenseData([
       ...data,
       {
-        SrNo: parseFloat(srno),
+        SrNo: Date.now(srno),
         Expense: expenseName,
         Date: expenseDate,
         Category: category,

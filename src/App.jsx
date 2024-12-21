@@ -12,22 +12,21 @@ import expenseData from "./components/ExpenseData";
 import ShowUserName from "./components/showUserName";
 import DeleteModal from "./components/Delete-Modal";
 import EditModal from "./components/Edit-Modal";
-import PieChart from "./components/PieChart";
-import LineChart from "./components/LineChart";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 function App() {
-  const [data, setData] = useState([...expenseData]);
+  const [data, setData] = useState([]);
   const [budget, setBudget] = useState(0);
   const [expenseModal, setExpenseModal] = useState(false);
   const [budgetModal, setBudgetModal] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
-  const [displayData, setDisplayData] = useState([...data]);
+  const [displayData, setDisplayData] = useState(data);
   const [deleteModal, setDeleteModal] = useState(false);
   const [dataIndex, setDataIndex] = useState(0);
   const [editModal, setEditModal] = useState(false);
-  
-  console.log("app",dataIndex);
+  const [activeCategory, setActiveCategory] = useState("");
+
+  // console.log("app",dataIndex);
 
   const handleAddBudget = (newBudget) => {
     setBudget(newBudget);
@@ -36,6 +35,12 @@ function App() {
   const handleExpenseData = (newData) => {
     setData(newData);
   };
+
+  console.log(data)
+
+  // useEffect(() => {
+  //   setDisplayData(data);
+  // }, [data]);
 
   const handleDataIndex = (id) => {
     setDataIndex(id);
@@ -59,7 +64,6 @@ function App() {
     setEditModal(false);
   };
 
-
   const handleButtons = (value) => {
     let categoryBtn = data.filter((item) => {
       return item.Category == value;
@@ -80,11 +84,11 @@ function App() {
 
   useEffect(() => {
     setDisplayData(data);
-  },[data]);
+  }, [data]);
 
   return (
     <div>
-      <ToastContainer/>
+      <ToastContainer />
       {editModal && (
         <EditModal
           setEditModal={setEditModal}
@@ -101,6 +105,8 @@ function App() {
           setData={setData}
           dataIndex={dataIndex}
           data={displayData}
+          isActive={activeCategory}
+          setActiveCategory={setActiveCategory}
         />
       )}
       {expenseModal && (
@@ -120,7 +126,7 @@ function App() {
       )}
       <Header />
       <div id="container">
-        <ShowUserName name={"Hello Amaan"} />
+        <ShowUserName name={"Amaan Ansari"} />
         <div className="financial-wrapper">
           <FinancialStatus
             title={"Your Budget"}
@@ -143,19 +149,19 @@ function App() {
           setBudgetModal={setBudgetModal}
           handleButtons={handleButtons}
           handleSearch={handleSearch}
-          handleAllData = {handleAllData}
+          handleAllData={handleAllData}
+          isActive={activeCategory}
+          setActiveCategory={setActiveCategory}
         />
-        <div className="chart">
-          <PieChart data={displayData} />
-          <LineChart data={displayData} />
-        </div>
-        <ExpenseTable
-          data={displayData}
-          setEditModal={setEditModal}
-          changeExpenseData={handleExpenseData}
-          setDeleteModal={setDeleteModal}
-          handleDataIndex={handleDataIndex}
-        />
+        {
+          <ExpenseTable
+            data={displayData}
+            setEditModal={setEditModal}
+            changeExpenseData={handleExpenseData}
+            setDeleteModal={setDeleteModal}
+            handleDataIndex={handleDataIndex}
+          />
+        }
       </div>
     </div>
   );

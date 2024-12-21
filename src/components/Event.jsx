@@ -11,8 +11,10 @@ function EventComponent({
   handleButtons,
   handleSearch,
   handleAllData,
+  isActive,
+  setActiveCategory
 }) {
-  const [activeCategory, setActiveCategory] = useState(""); // Track active category
+   // Track active category
 
   // Handle category button click
   const handleCategoryClick = (category) => {
@@ -36,7 +38,7 @@ function EventComponent({
 
         {/* All Expenses button */}
         <button
-          className={`category-btn ${activeCategory === "" ? "active" : ""}`} // Add active class conditionally
+          className={`category-btn ${isActive === "" ? "active" : ""}`} // Add active class conditionally
           onClick={() => {
             setActiveCategory(""); // Reset active category to show all expenses
             handleAllData();
@@ -49,7 +51,7 @@ function EventComponent({
         <div className="event-btn">
         {/* Food & Drinks button */}
         <button
-          className={`category-btn ${activeCategory === "Food & Drinks" ? "active" : ""}`} // Add active class for 'Food & Drinks'
+          className={`category-btn ${isActive === "Food & Drinks" ? "active" : ""}`} // Add active class for 'Food & Drinks'
           onClick={() => handleCategoryClick("Food & Drinks")}
         >
           <img src={foodLogo} alt="food logo" /> Food & Drinks
@@ -57,7 +59,7 @@ function EventComponent({
 
         {/* Groceries button */}
         <button
-          className={`category-btn ${activeCategory === "Groceries" ? "active" : ""}`} // Add active class for 'Groceries'
+          className={`category-btn ${isActive === "Groceries" ? "active" : ""}`} // Add active class for 'Groceries'
           onClick={() => handleCategoryClick("Groceries")}
         >
           <img src={groceriesLogo} alt="groceries logo" /> Groceries
@@ -67,7 +69,7 @@ function EventComponent({
         <div className="event-btn">
         {/* Travel button */}
         <button
-          className={`category-btn ${activeCategory === "Travel" ? "active" : ""}`} // Add active class for 'Travel'
+          className={`category-btn ${isActive === "Travel" ? "active" : ""}`} // Add active class for 'Travel'
           onClick={() => handleCategoryClick("Travel")}
         >
           <img src={bagLogo} alt="travel logo" /> Travel
@@ -75,7 +77,7 @@ function EventComponent({
 
         {/* Health button */}
         <button
-          className={`category-btn ${activeCategory === "Health" ? "active" : ""}`} // Add active class for 'Health'
+          className={`category-btn ${isActive === "Health" ? "active" : ""}`} // Add active class for 'Health'
           onClick={() => handleCategoryClick("Health")}
         >
           <img src={healthLogo} alt="health logo" /> Health
