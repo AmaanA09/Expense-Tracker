@@ -21,7 +21,8 @@ function DeleteModal({setDeleteModal,setData,dataIndex,data,setActiveCategory}) 
       notify()
     }
   return (
-    <div className="modal-container" onClick={()=>(setDeleteModal(false))}>
+    <div className="opacity " onClick={()=>(setDeleteModal(false))}>
+    <div className="modal-container" >
       <div className="delete-modal">
        <img src={exclamation}/>
        <p>Are You Sure ?</p>
@@ -31,6 +32,7 @@ function DeleteModal({setDeleteModal,setData,dataIndex,data,setActiveCategory}) 
           <button type="button" className="delete-btn" onClick={()=>(handleDeleteData())}>Delete</button>
         </div>
       </div>
+     </div>
      </div>
   );
 }

@@ -77,7 +77,8 @@ function ExpenseModal({ data, changeExpenseData, setExpenseModal }) {
   console.log("this is amount", typeof expenseAmount);
 
   return (
-    <div className="modal-container" onClick={() => setExpenseModal(false)}>
+    <div className="opacity" onClick={() => setExpenseModal(false)}>
+    <div className="modal-container" >
       <div className="modal-inner-div">
         <button
           className="expense-exit-button"
@@ -165,6 +166,7 @@ function ExpenseModal({ data, changeExpenseData, setExpenseModal }) {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 }

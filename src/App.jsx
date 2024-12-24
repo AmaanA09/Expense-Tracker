@@ -8,7 +8,6 @@ import espenseLogo from "./assets/expense-icon.svg";
 import ExpenseModal from "./components/Expense-Modal";
 import ExpenseTable from "./components/Expense-table";
 import BudgetModal from "./components/Budget-Modal";
-import expenseData from "./components/ExpenseData";
 import ShowUserName from "./components/showUserName";
 import DeleteModal from "./components/Delete-Modal";
 import EditModal from "./components/Edit-Modal";

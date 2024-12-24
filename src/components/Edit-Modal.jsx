@@ -55,7 +55,8 @@ function EditModal({ setEditModal, dataIndex, displayData, handleEditTrnsaction,
   
 
   return (
-    <div className="modal-container" onClick={() => setEditModal(false)}>
+    <div className="opacity" onClick={() => setEditModal(false)}>
+    <div className="modal-container" >
       <div className="modal-inner-div">
         <button
           type="button"
@@ -147,6 +148,7 @@ function EditModal({ setEditModal, dataIndex, displayData, handleEditTrnsaction,
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 }
