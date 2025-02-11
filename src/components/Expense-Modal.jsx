@@ -66,7 +66,7 @@ function ExpenseModal({ data, changeExpenseData, setExpenseModal }) {
         Expense: expenseName,
         Date: expenseDate,
         Category: category,
-        Amount: parseFloat(expenseAmount),
+        Amount: parseInt(expenseAmount),
       },
     ]);
     setExpenseModal(false);
@@ -77,7 +77,7 @@ function ExpenseModal({ data, changeExpenseData, setExpenseModal }) {
   console.log("this is amount", typeof expenseAmount);
 
   return (
-    <div className="opacity" onClick={() => setExpenseModal(false)}>
+    <div className="opacity">
     <div className="modal-container" >
       <div className="modal-inner-div">
         <button

@@ -152,7 +152,6 @@ function App() {
           isActive={activeCategory}
           setActiveCategory={setActiveCategory}
         />
-        {
           <ExpenseTable
             data={displayData}
             setEditModal={setEditModal}
@@ -160,7 +159,6 @@ function App() {
             setDeleteModal={setDeleteModal}
             handleDataIndex={handleDataIndex}
           />
-        }
       </div>
     </div>
   );

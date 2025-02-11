@@ -55,7 +55,7 @@ function EditModal({ setEditModal, dataIndex, displayData, handleEditTrnsaction,
   
 
   return (
-    <div className="opacity" onClick={() => setEditModal(false)}>
+    <div className="opacity">
     <div className="modal-container" >
       <div className="modal-inner-div">
         <button
